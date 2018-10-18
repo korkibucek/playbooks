@@ -25,6 +25,7 @@
     service:
       name: httpd
       enabled: yes
+      state: started
 
 
 - hosts: databases
