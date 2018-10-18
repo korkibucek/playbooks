@@ -4,17 +4,17 @@
   vars:
     control_enable: "yes"
     verbosity: 1
-    do_not_query_localhost: no
-    use_syslog: yes
-    extended_statistics: yes
+    do_not_query_localhost: "no"
+    use_syslog: "yes"
+    extended_statistics: "yes"
     root_hints: /etc/unbound/root.hints
     num_threads: 1
     outgoing_port_permit: 32768-65535
     outgoing_port_avoid: 0-32767
-    harden_glue: yes
-    harden_dnssec_stripped: yes
-    harden_below_nxdomain: yes
-    harden_referral_path: yes
+    harden_glue: "yes"
+    harden_dnssec_stripped: "yes"
+    harden_below_nxdomain: "yes"
+    harden_referral_path: "yes"
     unwanted_reply_threshold: 10000000
     edns_buffer_size: 1280
     port: 53
