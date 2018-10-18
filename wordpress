@@ -1,7 +1,8 @@
 ---
 - hosts: webservers
   remote_user: root
-  httpd_server_root: /var/dog/html
+  vars :
+    httpd_server_root: /var/dog/html
 
   tasks:
   - name: ensure apache is at the latest version
