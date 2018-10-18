@@ -11,6 +11,7 @@
     template:
       src: /etc/ansible/templates/httpd_conf.j2
       dest: /etc/httpd.conf
+      httpd_server_root: /var/dog/html
 
 - hosts: databases
   remote_user: root
