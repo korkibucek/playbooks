@@ -21,6 +21,11 @@
     template:
       src: /etc/ansible/templates/httpd_conf.j2
       dest: /etc/httpd.conf
+  - name: Enable service httpd, and not touch the state
+    service:
+      name: httpd
+      enabled: yes
+
 
 - hosts: databases
   remote_user: root
