@@ -39,6 +39,10 @@
     yum:
       name: unbound
       state: latest
+  - name: install wget
+    yum:
+      name: wget
+      state: latest
   - name: Start unbound and enable it
     service:
       name: unbound
