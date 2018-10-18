@@ -28,10 +28,6 @@
     yum:
       name: unbound
       state: latest
-  - name: write the unbound config file
-    template:
-      src: /etc/ansible/templates/unbound_conf.j2
-      dest: /etc/unbound/unbound.conf
   - name: Start unbound and enable it
     service:
       name: unbound
@@ -44,3 +40,7 @@
       owner: unbound
       group: unbound
       mode: 0775
+  - name: write the unbound config file
+    template:
+      src: /etc/ansible/templates/unbound_conf.j2
+      dest: /etc/unbound/unbound.conf
