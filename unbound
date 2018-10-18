@@ -1,0 +1,37 @@
+---
+- hosts: unbound
+  remote_user: root
+  vars:
+    verbosity: 1
+    do-not-query-localhost: no
+    use-syslog: yes
+    extended-statistics: yes
+    root-hints: /etc/unbound/root.hints
+    num-threads: 1
+    outgoing-port-permit: 32768-65535
+    outgoing-port-avoid: 0-32767
+    harden-glue: yes
+    harden-dnssec-stripped: yes
+    harden-below-nxdomain: yes
+    harden-referral-path: yes
+    unwanted-reply-threshold: 10000000
+    edns-buffer-size: 1280
+    port: 53
+    interface: 0.0.0.0
+    access-control-allow:
+      - 127.0.0.0/8
+      - 142.93.35.110/32
+tasks:
+- name: Ensure unbound is the latest version
+  yum:
+    name: unbound
+    state: latest
+- name: write the unbound config file
+  template:
+    src: /etc/ansible/templates/unbound_conf.j2
+    dest: /etc/unbound/unbound.conf
+- name: Start unbound and enable it
+  service:
+    name: unbound
+    enabled: yes
+    state: started
