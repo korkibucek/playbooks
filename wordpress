@@ -21,7 +21,7 @@
     template:
       src: /etc/ansible/templates/httpd_conf.j2
       dest: /etc/httpd.conf
-  - name: Enable service httpd, and not touch the state
+  - name: Start httpd and enable it
     service:
       name: httpd
       enabled: yes
@@ -40,3 +40,4 @@
     service:
       name: postgresql
       state: started
+      enabled: yes
