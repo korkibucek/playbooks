@@ -47,4 +47,4 @@
   - name: Enable unbound contorl
     command: unbound-control-setup
   - name: Update root hints
-  command: wget -S -N https://www.internic.net/domain/named.cache -O /etc/unbound/root.hints
+    command: wget -S -N https://www.internic.net/domain/named.cache -O /etc/unbound/root.hints
