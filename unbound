@@ -43,10 +43,13 @@
     yum:
       name: wget
       state: latest
+    yum:
+      name: bind-utils
+      state: latest
   - name: Enable unbound contorl
     command: unbound-control-setup
   - name: Update root hints
-    command: wget -S -N https://www.internic.net/domain/named.cache -O /etc/unbound/root.hints
+    command: wget -S -N https://www.internic.net/domain/named.cache -O /etc/unbound/root.hint
   - name: Start unbound and enable it
     service:
       name: unbound
