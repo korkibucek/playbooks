@@ -44,3 +44,5 @@
       name: unbound
       enabled: yes
       state: started
+  - name: Enable unbound contorl
+    command: /usr/sbin/unbound-control-setup
