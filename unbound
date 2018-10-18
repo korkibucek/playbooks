@@ -21,7 +21,7 @@
     access-control-allow:
       - 127.0.0.0/8
       - 142.93.35.110/32
-tasks:
+  tasks:
   - name: Ensure unbound is the latest version
     yum:
       name: unbound
