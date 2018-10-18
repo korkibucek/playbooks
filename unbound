@@ -38,4 +38,4 @@
       enabled: yes
       state: started
   - name: Create unbound log directory
-    file: path=/etc/unbound/log state=directory
+      file: path=/etc/unbound/log state=directory
