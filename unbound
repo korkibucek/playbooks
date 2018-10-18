@@ -24,15 +24,6 @@
       - 142.93.35.110/32
 
   tasks:
-  - name: Ensure unbound is the latest version
-    yum:
-      name: unbound
-      state: latest
-  - name: Start unbound and enable it
-    service:
-      name: unbound
-      enabled: yes
-      state: started
   - name: Create unbound log directory
     file:
       path: /etc/unbound/log
@@ -44,3 +35,12 @@
     template:
       src: /etc/ansible/templates/unbound_conf.j2
       dest: /etc/unbound/unbound.conf
+  - name: Ensure unbound is the latest version
+    yum:
+      name: unbound
+      state: latest
+  - name: Start unbound and enable it
+    service:
+      name: unbound
+      enabled: yes
+      state: started
