@@ -2,14 +2,14 @@
 - hosts: webservers
   remote_user: root
   vars :
-    httpd_server_root: /var/www/html
+    httpd_server_root: /etc/httpd
     httpd_listen: 80
     httpd_server_admin: derek@guru.es
     httpd_server_name: dog.woof.com
     httpd_server_tokens: none
     httpd_error_log: /var/log/httpd/http_error.log
     httpd_log_level: warn
-    
+    httpd_document_root: /var/www/html
 
   tasks:
   - name: ensure apache is at the latest version
