@@ -2,7 +2,7 @@
 - hosts: unbound
   remote_user: root
   vars:
-    control_enable: yes
+    control_enable: "yes"
     verbosity: 1
     do_not_query_localhost: no
     use_syslog: yes
@@ -22,6 +22,7 @@
     access_control_allow:
       - 127.0.0.0/8
       - 142.93.35.110/32
+
   tasks:
   - name: Ensure unbound is the latest version
     yum:
